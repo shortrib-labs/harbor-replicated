@@ -2,14 +2,16 @@
 apiVersion: kots.io/v1beta1
 kind: Application
 metadata:
-  name: nginx
+  name: harbor
 spec:
-  title: App Name
-  icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/icon/color/kubernetes-icon-color.png
+  title: Harbor
+  icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/harbor/icon/color/harbor-icon-color.png
   statusInformers:
-    - deployment/nginx
+  - deployment/harbor-core
+  - deployment/harbor-registry
+  - deployment/harbor-portal
   ports:
-    - serviceName: "nginx"
-      servicePort: 80
-      localPort: 8888
-      applicationUrl: "http://nginx"
+    - serviceName: "harbor"
+      servicePort: 443
+      localPort: 8843
+      applicationUrl: "https://harbor"
