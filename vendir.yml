@@ -1,0 +1,11 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+minimumRequiredVersion: 0.8.0
+directories:
+- path: manifests/helm
+  contents: 
+  - path: harbor
+    http:
+      url: https://helm.goharbor.io/harbor-1.11.1.tgz
+      sha256: 700e5287938907b9c83bb2798ce7ec19257ec53efa671c43e920e9ace706e512
+      disableUnpack: true

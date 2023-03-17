@@ -1,0 +1,34 @@
+{
+  "entries": {
+    "tap": {
+      "replicatedhq/replicated": {
+        "revision": "3579c35ee9dc9bd85be8c5a201b1b852efef315a"
+      },
+      "vmware-tanzu/carvel": {
+        "revision": "d5a41fc9cfe3f1e167356171513061b08c373112"
+      }
+    },
+    "brew": {
+      "cli": {
+        "version": "0.42.0",
+        "bottle": false
+      },
+      "vendir": {
+        "version": "v0.33.1",
+        "bottle": false
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "ventura": {
+        "HOMEBREW_VERSION": "4.0.6",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "14.2.0.0.1.1668646533",
+        "Xcode": "14.1",
+        "macOS": "13.1"
+      }
+    }
+  }
+}
