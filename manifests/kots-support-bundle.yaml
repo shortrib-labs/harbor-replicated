@@ -8,5 +8,5 @@ spec:
     - clusterResources: {}
     - logs:
         selector:
-          - app=nginx
+          - app=harbor
         namespace: '{{repl Namespace }}'
