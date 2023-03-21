@@ -36,3 +36,5 @@ release: $(MANIFESTS) bump
 install:
 	@kubectl kots install ${REPLICATED_APP}
 
+vendor:
+	@vendir sync
