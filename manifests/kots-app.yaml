@@ -2,7 +2,7 @@
 apiVersion: kots.io/v1beta1
 kind: Application
 metadata:
-  name: harbor-registry
+  name: harbor
 spec:
   title: Harbor
   icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/harbor/icon/color/harbor-icon-color.png
