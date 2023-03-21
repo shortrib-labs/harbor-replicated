@@ -19,30 +19,29 @@ spec:
   # values are used in the customer environment, as a pre-render step
   # these values will be supplied to helm template
   values:
-    expose:
-      externalURL: https://registry.{{repl ConfigOption "domain" }}
-      ingress:
-        hosts:
-          core: registry.{{repl ConfigOption "domain" }}
-          notary: notary.{{repl ConfigOption "domain" }}
-        annotations:
-          ingress.kubernetes.io/ssl-redirect: "true"
+    externalURL: https://registry.{{repl ConfigOption "domain" }}
 
   optionalValues:
   - when: '{{repl (ConfigOptionEquals "tls-issuer-type" "cluster-issuer") }}'
-    recusirveMerge: true
+    recusirveMerge: false
     values:
       expose:
         ingress:
+          hosts:
+            core: registry.{{repl ConfigOption "domain" }}
+            notary: notary.{{repl ConfigOption "domain" }}
           annotations:
             cert-manager.io/cluster-issuer: '{{repl (ConfigOption "tls-issuer-name" ) }}'
             ingress.kubernetes.io/force-ssl-redirect: "true"
 
   - when: '{{repl (ConfigOptionEquals "tls-issuer-type" "issuer") }}'
-    recusirveMerge: true
+    recusirveMerge: false
     values:
       expose:
         ingress:
+          hosts:
+            core: registry.{{repl ConfigOption "domain" }}
+            notary: notary.{{repl ConfigOption "domain" }}
           annotations:
             cert-manager.io/issuer: '{{repl (ConfigOption "tls-issuer-name" ) }}'
             ingress.kubernetes.io/force-ssl-redirect: "true"
